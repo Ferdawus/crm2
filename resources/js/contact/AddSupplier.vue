@@ -11,81 +11,127 @@
       <form action="">
         <div class="row g-3 pt-4">
           <div class="col-md-3">
-            <input
-              type="text"
-              class="form-control py-3"
-              placeholder="Supplier Name"
-            />
+            <div class="mb-3">
+              <label for="" class="form-label text-white">Supplier Name</label>
+              <input
+                type="text"
+                class="form-control py-3"
+                placeholder="Supplier Name"
+              />
+            </div>
           </div>
           <div class="col-md-3">
-            <input type="text" class="form-control" placeholder="Phone" />
+            <div class="mb-3">
+              <label for="" class="form-label text-white">Phone</label>
+              <input type="text" class="form-control" placeholder="Phone" />
+            </div>
           </div>
           <div class="col-md-3">
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Business Name"
-            />
+            <div class="mb-3">
+              <label for="" class="form-label text-white">Business Name</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Business Name"
+              />
+            </div>
           </div>
           <div class="col-md-3">
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Business Address"
-            />
+            <div class="mb-3">
+              <label for="" class="form-label text-white"
+                >Business Address</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Business Address"
+              />
+            </div>
           </div>
         </div>
 
-        <div class="row g-3 pt-4">
+        <div class="row g-3">
           <div class="col-md-3">
-            <input
-              type="text"
-              class="form-control py-3"
-              placeholder="Alternative contact name"
-            />
+            <div class="mb-3">
+              <label for="" class="form-label text-white"
+                >Alternative contact name</label
+              >
+              <input
+                type="text"
+                class="form-control py-3"
+                placeholder="Alternative contact name"
+              />
+            </div>
           </div>
           <div class="col-md-3">
-            <input
-              type="text"
-              class="form-control py-3"
-              placeholder="Alternative number"
-            />
+            <div class="mb-3">
+              <label for="" class="form-label text-white"
+                >Alternative number</label
+              >
+              <input
+                type="number"
+                class="form-control py-3"
+                placeholder="Alternative number"
+              />
+            </div>
           </div>
           <div class="col-md-3">
-            <input type="text" class="form-control" placeholder="City" />
+            <div class="mb-3">
+              <label for="" class="form-label text-white">City</label>
+              <input type="text" class="form-control" placeholder="City" />
+            </div>
           </div>
           <div class="col-md-3">
-            <input type="text" class="form-control" placeholder="Country" />
+            <div class="mb-3">
+              <label for="" class="form-label text-white">Country</label>
+              <input type="text" class="form-control" placeholder="Country" />
+            </div>
           </div>
         </div>
-        <div class="row g-3 pt-4">
+        <div class="row g-3">
           <div class="col-md-3">
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Other social Media"
-            />
+            <div class="mb-3">
+              <label for="" class="form-label text-white">Facebook</label>
+              <input
+                type="text"
+                class="form-control py-3"
+                placeholder="Facebook"
+              />
+            </div>
           </div>
           <div class="col-md-3">
-            <input
-              type="text"
-              class="form-control py-3"
-              placeholder="Facebook"
-            />
+            <div class="mb-3">
+              <label for="Other social Media" class="form-label text-white"
+                >Other social Media</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Other social Media"
+              />
+            </div>
           </div>
           <div class="col-md-3">
-            <input
-              type="text"
-              class="form-control py-3"
-              placeholder="Picture Attachment"
-            />
+            <div class="mb-3">
+              <label for="" class="form-label text-white"></label>
+              <input
+                type="text"
+                class="form-control py-3"
+                placeholder="Opening Balance"
+              />
+            </div>
           </div>
           <div class="col-md-3">
-            <input
-              type="text"
-              class="form-control py-3"
-              placeholder="Opening Balance"
-            />
+            <div class="mb-3">
+              <label for="" class="form-label text-white"
+                >Picture Attachment</label
+              >
+              <input
+                type="text"
+                class="form-control py-3"
+                placeholder="Picture Attachment"
+              />
+            </div>
           </div>
         </div>
         <div class="pt-3">

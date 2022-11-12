@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
+import Home from "../pages/Home.vue";
 import Dashboard from "../dashboard/main.vue";
 import {
     AddCustomer,
@@ -30,6 +31,7 @@ import Finance from "../finance/FinanceIndex.vue";
 import Report from "../report/ReportIndex.vue";
 
 const routes = [
+    { path: "/", name: "home", component: Home },
     { path: "/admin/dashboard", name: "dashboard.main", component: Dashboard },
     // contact route
     {
