@@ -113,7 +113,9 @@
           </div>
           <div class="col-md-3">
             <div class="mb-3">
-              <label for="" class="form-label text-white"></label>
+              <label for="" class="form-label text-white"
+                >Opening Balancez</label
+              >
               <input
                 type="text"
                 class="form-control py-3"

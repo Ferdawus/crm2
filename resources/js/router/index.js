@@ -7,7 +7,7 @@ import {
     AddSupplier,
     SupplierList,
 } from "../contact";
-import { AddProduct, AllProduct, Category, Unit } from "../product";
+import { AddProduct, AllProduct, Category } from "../product";
 import {
     AddSales,
     SalesList,
@@ -26,6 +26,8 @@ import {
     EmailSettings,
     PrintHeader,
     Referrer,
+    Hosting,
+    Recurring,
 } from "../settings";
 import Finance from "../finance/FinanceIndex.vue";
 import Report from "../report/ReportIndex.vue";
@@ -70,11 +72,11 @@ const routes = [
         name: "product.category",
         component: Category,
     },
-    {
-        path: "/product/unit",
-        name: "product.unit",
-        component: Unit,
-    },
+    // {
+    //     path: "/product/unit",
+    //     name: "product.unit",
+    //     component: Unit,
+    // },
     // sales route
     {
         path: "/sales/add",
@@ -154,6 +156,16 @@ const routes = [
         path: "/settings/referrer",
         name: "settings.referrer",
         component: Referrer,
+    },
+    {
+        path: "/settings/hosting",
+        name: "settings.hosting",
+        component: Hosting,
+    },
+    {
+        path: "/settings/recurring",
+        name: "settings.recurring",
+        component: Recurring,
     },
 ];
 

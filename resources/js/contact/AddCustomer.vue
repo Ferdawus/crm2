@@ -140,6 +140,23 @@
             </div>
           </div>
         </div>
+        <div class="row">
+          <div class="col-3">
+            <div class="form-check form-check-lg">
+              <input
+                class="form-check-input"
+                name="product_status"
+                v-model="form.customer_status"
+                type="checkbox"
+                value="1"
+                id="flexCheckDefault"
+              />
+              <label class="form-check-label text-white" for="flexCheckDefault">
+                Status
+              </label>
+            </div>
+          </div>
+        </div>
         <div class="pt-3">
           <input
             type="submit"
@@ -152,7 +169,15 @@
   </div>
 </template>
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      form: {
+        customer_status: 0,
+      },
+    };
+  },
+};
 </script>
 <style>
 .btn_bg {

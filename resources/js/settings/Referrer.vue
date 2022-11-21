@@ -11,42 +11,63 @@
       <form action="">
         <div class="row g-3 pt-4">
           <div class="col-md-4">
-            <input
-              type="text"
-              class="form-control py-3"
-              placeholder="Referrer Name"
-            />
+            <div class="mb-3">
+              <label for="" class="form-label text-white">Referrer Name</label>
+              <input
+                type="text"
+                class="form-control py-3"
+                placeholder="Referrer Name"
+              />
+            </div>
           </div>
 
           <div class="col-md-4">
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Contact Number"
-            />
+            <div class="mb-3">
+              <label for="" class="form-label text-white">Contact Number</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Contact Number"
+              />
+            </div>
           </div>
           <div class="col-md-4">
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Alternative Number"
-            />
+            <div class="mb-3">
+              <label for="" class="form-label text-white"
+                >Alternative Number</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Alternative Number"
+              />
+            </div>
           </div>
         </div>
 
-        <div class="row g-3 pt-4">
+        <div class="row g-3">
           <div class="col-md-4">
-            <input type="text" class="form-control" placeholder="Address" />
+            <div class="mb-3">
+              <label for="" class="form-label text-white">Address</label>
+              <input type="text" class="form-control" placeholder="Address" />
+            </div>
           </div>
           <div class="col-md-4">
-            <input type="text" class="form-control" placeholder="Commission" />
+            <div class="mb-3">
+              <label for="" class="form-label text-white">Commission</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Commission"
+              />
+            </div>
           </div>
         </div>
         <div class="pt-3">
           <input
             type="submit"
             class="btn btn_bg py-2 px-3 text-white"
-            value="General"
+            value="Referrer"
           />
         </div>
       </form>

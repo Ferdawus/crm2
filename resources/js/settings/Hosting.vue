@@ -4,7 +4,7 @@
       <div class="row pt-5">
         <div class="col-md-3">
           <h3 class="border border-secondary py-1 text-white text-center">
-            Add Category
+            Add Hosting
           </h3>
         </div>
       </div>
@@ -13,7 +13,7 @@
           <div class="col-md-6">
             <div class="mb-3">
               <label for="Category Name" class="form-label text-white"
-                >Category Name</label
+                >Hosting Name</label
               >
               <input
                 type="text"
@@ -40,7 +40,7 @@
           <input
             type="submit"
             class="btn btn_bg py-2 px-3 text-white"
-            value="Add New Category"
+            value="Add New Hosting"
           />
         </div>
       </form>

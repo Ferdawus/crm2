@@ -246,10 +246,26 @@
                 <label for="" class="form-label text-white"
                   >Recurring Title</label
                 >
+                <select
+                  class="form-select form-control"
+                  aria-label="Default select example"
+                >
+                  <option selected>Recurring Title</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="mb-3">
+                <label for="" class="form-label text-white"
+                  >Recurring Quintity</label
+                >
                 <input
-                  type="text"
+                  type="number"
                   class="form-control"
-                  placeholder="Recurring Title"
+                  placeholder="Recurring Quintity"
                 />
               </div>
             </div>
@@ -411,10 +427,26 @@
                 <label for="" class="form-label text-white"
                   >Recurring Title</label
                 >
+                <select
+                  class="form-select form-control"
+                  aria-label="Default select example"
+                >
+                  <option selected>Recurring Title</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="mb-3">
+                <label for="" class="form-label text-white"
+                  >Recurring Quintity</label
+                >
                 <input
-                  type="text"
+                  type="number"
                   class="form-control"
-                  placeholder="Recurring Title"
+                  placeholder="Recurring Quintity"
                 />
               </div>
             </div>

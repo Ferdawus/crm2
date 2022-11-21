@@ -213,7 +213,7 @@
                         <p>Category</p>
                       </router-link>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                       <router-link
                         :to="{ name: 'product.unit' }"
                         class="nav-link"
@@ -221,7 +221,7 @@
                         <i class="far fa-circle nav-icon"></i>
                         <p>Unit</p>
                       </router-link>
-                    </li>
+                    </li> -->
                   </ul>
                 </li>
                 <!-- Sales -->
@@ -384,6 +384,24 @@
                         <p>Referrer</p>
                       </router-link>
                     </li>
+                    <li class="nav-item">
+                      <router-link
+                        :to="{ name: 'settings.hosting' }"
+                        class="nav-link"
+                      >
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Hosting</p>
+                      </router-link>
+                    </li>
+                    <!-- <li class="nav-item">
+                      <router-link
+                        :to="{ name: 'settings.recurring' }"
+                        class="nav-link"
+                      >
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Recurring</p>
+                      </router-link>
+                    </li> -->
                   </ul>
                 </li>
 
