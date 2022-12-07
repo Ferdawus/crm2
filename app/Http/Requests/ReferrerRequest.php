@@ -27,10 +27,10 @@ class ReferrerRequest extends FormRequest
     {
         return [
             'referrer_name'      => 'required|max:255',
-            'contact_number'     => 'max:20',
-            'alternative_number' => 'max:20',
-            'address'            => 'min:2',
-            'commission'         => 'min:1',
+            'contact_number'     => 'nullable|max:20',
+            'alternative_number' => 'nullable|max:20',
+            'address'            => 'nullable|min:2',
+            'commission'         => 'nullable|min:1',
         ];
     }
     protected function failedValidation(Validator $validator)

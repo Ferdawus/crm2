@@ -27,7 +27,7 @@ class HostingRequest extends FormRequest
     {
         return [
             'hosting_name' => 'required|max:255',
-            'description'  => 'min:4' 
+            'description'  => 'nullable|min:4' 
         ];
     }
     protected function failedValidation(Validator $validator)

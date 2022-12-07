@@ -12,30 +12,26 @@
                             <table class="table table-bordered">
                             <thead>
                                 <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">First</th>
-                                <th scope="col">Last</th>
-                                <th scope="col">Handle</th>
+                                <th scope="col">Sl</th>
+                                <th scope="col">Customer Name</th>
+                                <th scope="col">Phone</th>
+                                <th scope="col">Business Name</th>
+                                <th scope="col">Business Address</th>
+                                <th scope="col">City</th>
+                                <th scope="col">Country</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
+                                <tr v-for="(customer,index) in customers" :key="index">
+                                    <th scope="row">{{ ++index }}</th>
+                                    <td>{{ customer.customer_name }}</td>
+                                    <td>{{ customer.phone }}</td>
+                                    <td>{{ customer.business_name }}</td>
+                                    <td>{{ customer.business_address }}</td>
+                                    <td>{{ customer.city }}</td>
+                                    <td>{{ customer.country }}</td>
                                 </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td colspan="2">Larry the Bird</td>
-                                    <td>@twitter</td>
-                                </tr>
+                               
                             </tbody>
                            </table>
                     </div>
@@ -47,7 +43,29 @@
     </div>
 </template>
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      customers: [],
+    };
+  },
+  mounted() {
+    this.fatchData();
+  },
+  methods: {
+    fatchData() {
+      axios
+        .get("/api/customer")
+        .then((res) => {
+          console.log(res.data.data);
+          this.customers = res.data.data;
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    },
+  },
+};
 </script>
 <style lang="">
 </style>

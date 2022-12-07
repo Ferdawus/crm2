@@ -26,18 +26,18 @@ class CustomerRequest extends FormRequest
     public function rules()
     {
         return [
-            'customer_name'            => 'required | max:100 | min:3',
-            'phone'                    => 'max:20',
-            'business_name'            => 'max:100 | min:3',
-            'business_address'         => 'max:500',
-            'alternative_contact_name' => 'max:100 | min:3',
-            'city'                     => 'max:20',
-            'country'                  => 'max:20',
-            'facebook'                 => 'url',
-            'other_social_media '      => 'url',
+            'customer_name'            => 'required | max:100 | min:2',
+            'phone'                    => 'nullable | max:20',
+            'business_name'            => 'nullable | max:100 | min:2',
+            'business_address'         => 'nullable | max:500',
+            'alternative_contact_name' => 'nullable | max:100 | min:2',
+            'city'                     => 'nullable | max:20',
+            'country'                  => 'nullable | max:20',
+            'facebook'                 => 'nullable | url',
+            'other_social_media'      => 'nullable | url',
             'opening_balance'          => 'nullable|numeric|between:0,9999999999.99',
-            'picture_attachment'       =>'image|mimes:jpg,png,jpeg,gif,svg|max:2048|dimensions:min_width=100,min_height=100,max_width=1000,max_height=1000',
-            'customer_status' => 'numeric',
+            'picture_attachment'       =>'nullable | image|mimes:jpg,png,jpeg,gif,svg|max:2048|dimensions:min_width=100,min_height=100,max_width=1000,max_height=1000',
+            // 'customer_status'          => 'numeric',
         ];
     }
     protected function failedValidation(Validator $validator)

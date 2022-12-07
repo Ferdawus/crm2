@@ -7,6 +7,7 @@ use App\Http\Requests\ProductRequest;
 use App\Http\Resources\ProductResource;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -17,7 +18,15 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return ProductResource::collection(Product::paginate(5));
+        
+        $products = DB::table('products')
+        ->leftJoin('categories','products.category_name','categories.id')
+        ->select('products.*','categories.category_name')
+        ->paginate(5);
+        return $products;
+     
+
+        // return ProductResource::collection(Product::paginate(5));
     }
 
     /**
@@ -35,6 +44,7 @@ class ProductController extends Controller
         $data->code                = $request->code;
         $data->selling_price       = $request->selling_price;
         $data->unit                = $request->unit;
+        $data->business_address    = $request->business_address;
         $data->product_status      = ($request->product_status)? $request->product_status : 0;
         $data->product_description = $request->product_description;
         $data->save();

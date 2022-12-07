@@ -15,4 +15,8 @@ class Sale extends Model
      * @var array
      */
     protected $guarded = [];
+
+    // public function host(){
+    //     return $this->belongsTo(Hosting::class);
+    // }
 }

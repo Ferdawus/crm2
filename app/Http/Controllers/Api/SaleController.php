@@ -5,8 +5,10 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\SalesRequest;
 use App\Http\Resources\SalesResource;
+use App\Http\Resources\SoftwareResource;
 use App\Models\Sale;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SaleController extends Controller
 {
@@ -17,7 +19,13 @@ class SaleController extends Controller
      */
     public function index()
     {
-        return SalesResource::collection(Sale::paginate(5));
+        $sale = DB::table('sales')
+        ->leftJoin('customers','sales.customer_name','customers.id')
+        ->leftJoin('referrers','sales.referrer_id','referrers.id')
+        ->leftJoin('hostings','sales.hosted_at','hostings.id')
+        ->select('sales.*','customers.customer_name','referrers.referrer_name','hostings.hosting_name')
+        ->paginate(5);
+        return $sale;
     }
 
     /**
@@ -41,7 +49,7 @@ class SaleController extends Controller
         $data->software_name                    = $request->software_name;
         $data->software_installation_id         = $request->software_installation_id;
         $data->software_hosted_by               = $request->software_hosted_by;
-        $data->software_hosted_at               = $request->software_hosted_at;
+        $data->software_hosted_at               = ($request->software_hosted_at) ? $request->software_hosted_at:0;
         $data->software_user_id                 = $request->software_user_id;
         $data->software_url                     = $request->software_url;
         $data->software_password                = $request->software_password;
@@ -54,7 +62,7 @@ class SaleController extends Controller
         $data->website_category                 = $request->website_category;
         $data->website_installation_id          = $request->website_installation_id;
         $data->hosted_by                        = $request->hosted_by;
-        $data->hosted_at                        = $request->hosted_at;
+        $data->hosted_at                        = ($request->hosted_at) ? $request->hosted_at:0;
         $data->website_url                      = $request->website_url;
         $data->cPanel_id                        = $request->cPanel_id;
         $data->website_password                 = $request->website_password;
@@ -101,7 +109,7 @@ class SaleController extends Controller
             'software_name'                    => $request->software_name,
             'software_installation_id'         => $request->software_installation_id,
             'software_hosted_by'               => $request->software_hosted_by,
-            'software_hosted_at'               => $request->software_hosted_at,
+            'software_hosted_at'               => ($request->software_hosted_at) ? $request->software_hosted_at:0,
             'software_user_id'                 => $request->software_user_id,
             'software_url'                     => $request->software_url,
             'software_password'                => $request->software_password,
@@ -114,7 +122,7 @@ class SaleController extends Controller
             'website_category'                 => $request->website_category,
             'website_installation_id'          => $request->website_installation_id,
             'hosted_by'                        => $request->hosted_by,
-            'hosted_at'                        => $request->hosted_at,
+            'hosted_at'                        => ($request->hosted_at) ? $request->hosted_at:0,
             'website_url'                      => $request->website_url,
             'cPanel_id'                        => $request->cPanel_id,
             'website_password'                 => $request->website_password,
@@ -139,5 +147,19 @@ class SaleController extends Controller
     {
         $sale->delete();
         return response()->json(['massage' => 'Data Delated Successfully']);
+    }
+    public function softwareDetails(){
+         $data = DB::table('sales')
+         ->leftJoin('hostings','sales.hosted_at','hostings.id')
+         ->select('sales.software_name','sales.software_installation_id','sales.software_hosted_by','sales.software_hosted_at','sales.software_user_id','sales.software_url','sales.software_password','sales.installation_date','sales.software_recurring_title','sales.software_recurring_quantity','sales.software_recurring_amount','sales.software_recurring_starting_date','sales.software_status','hostings.hosting_name')
+         ->paginate(5);
+         return $data;
+    }
+    public function websiteDetails(){
+        $data = DB::table('sales')
+        ->leftJoin('hostings','sales.hosted_at','hostings.id')
+        ->select('sales.website_category','sales.website_installation_id','sales.hosted_by','sales.hosted_at','sales.website_url','sales.cPanel_id','sales.website_password','sales.domain_purchased_by','sales.website_recurring_title','sales.website_recurring_quantity','sales.website_recurring_amount','sales.website_recurring_starting_date','sales.website_status','hostings.hosting_name')
+        ->paginate(5);
+        return $data;
     }
 }

@@ -1,3 +1,4 @@
+
 <template lang="">
     <div>
         <div class="container pt-5">
@@ -12,30 +13,28 @@
                             <table class="table table-bordered">
                             <thead>
                                 <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">First</th>
-                                <th scope="col">Last</th>
-                                <th scope="col">Handle</th>
+                                <th scope="col">Sl No</th>
+                                <th scope="col">Supplier Name</th>
+                                <th scope="col">Phone</th>
+                                <th scope="col">Business Name</th>
+                                <th scope="col">Business Address</th>
+                                <th scope="col">City</th>
+                                <th scope="col">Country</th>
+                                <th scope="col">Opening Balance</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
+                                <tr v-for="(supplier,index) in suppliers" :key="index">
+                                    <th scope="row">{{ ++index }}</th>
+                                    <td>{{ supplier.supplier_name }}</td>
+                                    <td>{{ supplier.phone }}</td>
+                                    <td>{{ supplier.business_name }}</td>
+                                    <td>{{ supplier.business_address }}</td>
+                                    <td>{{ supplier.city }}</td>
+                                    <td>{{ supplier.country }}</td>
+                                    <td>{{ supplier.opening_balance }}</td>
                                 </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td colspan="2">Larry the Bird</td>
-                                    <td>@twitter</td>
-                                </tr>
+                               
                             </tbody>
                            </table>
                     </div>
@@ -47,7 +46,29 @@
     </div>
 </template>
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      suppliers: [],
+    };
+  },
+  mounted() {
+    this.fatchData();
+  },
+  methods: {
+    fatchData() {
+      axios
+        .get("/api/supplier")
+        .then((res) => {
+          this.suppliers = res.data.data;
+          console.log(res.data.data);
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    },
+  },
+};
 </script>
 <style lang="">
 </style>

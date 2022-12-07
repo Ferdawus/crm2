@@ -33,7 +33,8 @@ class ProductRequest extends FormRequest
             'selling_price'       => 'nullable|numeric',
             'unit'                => 'nullable|numeric',
             'product_description' => 'nullable|max:500',
-            'product_status'      => 'numeric'
+            'business_address'    => 'nullable|max:255|min:2',
+            // 'product_status'      => 'numeric'
         ];
     }
     protected function failedValidation(Validator $validator)

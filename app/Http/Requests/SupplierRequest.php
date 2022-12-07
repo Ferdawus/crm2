@@ -27,17 +27,17 @@ class SupplierRequest extends FormRequest
     {
          return [
             'supplier_name'            => 'required | max:100 | min:3',
-            'phone'                    => 'max:20',
-            'business_name'            => 'max:100 | min:3',
-            'business_address'         => 'max:500',
-            'alternative_contact_name' => 'max:100 | min:3',
-            'alternative_number'       => 'max:20',
-            'city'                     => 'max:20',
-            'country'                  => 'max:20',
-            'facebook'                 => 'url',
-            'other_social_media'       => 'url',
+            'phone'                    => 'nullable | max:20',
+            'business_name'            => ' nullable| max:100 | min:3',
+            'business_address'         => 'nullable | max:500',
+            'alternative_contact_name' => 'nullable |max:100 | min:3',
+            'alternative_number'       => 'nullable | max:20',
+            'city'                     => 'nullable | max:20',
+            'country'                  => 'nullable | max:20',
+            'facebook'                 => 'nullable | url',
+            'other_social_media'       => 'nullable | url',
             'opening_balance'          => 'nullable|numeric|between:0,9999999999.99',
-            'picture_attachment'       =>'image|mimes:jpg,png,jpeg,gif,svg|max:2048|dimensions:min_width=100,min_height=100,max_width=1000,max_height=1000',
+            'picture_attachment'       => 'nullable | image|mimes:jpg,png,jpeg,gif,svg|max:2048|dimensions:min_width=100,min_height=100,max_width=1000,max_height=1000',
          ];
     }
     protected function failedValidation(Validator $validator)

@@ -13,6 +13,8 @@ import {
     SalesList,
     ProductwiseSales,
     SaleSupplierList,
+    WebsiteList,
+    SoftwareList,
 } from "../sales";
 import {
     AddInvoice,
@@ -97,6 +99,16 @@ const routes = [
         path: "/sales/supplier/list",
         name: "sales.supplier.list",
         component: SaleSupplierList,
+    },
+    {
+        path: "/sales/website/list",
+        name: "sales.website.list",
+        component: WebsiteList,
+    },
+    {
+        path: "/sales/software/list",
+        name: "sales.software.list",
+        component: SoftwareList,
     },
     // Invoice route
     {

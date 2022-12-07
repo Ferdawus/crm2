@@ -27,7 +27,7 @@ class CategoryRequest extends FormRequest
     {
         return [
             'category_name' => 'required|max:100',
-            'description'   => 'min:2',
+            'description'   => 'nullable | min:2',
         ];
     }
     protected function failedValidation(Validator $validator)
